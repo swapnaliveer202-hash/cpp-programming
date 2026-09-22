@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+class Library
+{
+protected:
+    string libraryName;
+
+public:
+    void getLibrary()
+    {
+        cout << "Enter Library Name: ";
+        cin >> libraryName;
+    }
+};
+
+class Book : public Library
+{
+private:
+    string bookName;
+    string author;
+
+public:
+    void getBook()
+    {
+        getLibrary();
+
+        cout << "Enter Book Name: ";
+        cin >> bookName;
+
+        cout << "Enter Author Name: ";
+        cin >> author;
+    }
+
+    void displayBook()
+    {
+        cout << "\nBook Details" << endl;
+        cout << "Library Name: " << libraryName << endl;
+        cout << "Book Name: " << bookName << endl;
+        cout << "Author: " << author << endl;
+    }
+};
+
+class Magazine : public Library
+{
+private:
+    string magazineName;
+    int issueNo;
+
+public:
+    void getMagazine()
+    {
+        getLibrary();
+
+        cout << "Enter Magazine Name: ";
+        cin >> magazineName;
+
+        cout << "Enter Issue Number: ";
+        cin >> issueNo;
+    }
+
+    void displayMagazine()
+    {
+        cout << "\nMagazine Details" << endl;
+        cout << "Library Name: " << libraryName << endl;
+        cout << "Magazine Name: " << magazineName << endl;
+        cout << "Issue Number: " << issueNo << endl;
+    }
+};
+
+int main()
+{
+    Book b;
+    Magazine m;
+
+    cout << "Enter Book Details" << endl;
+    b.getBook();
+
+    cout << "\nEnter Magazine Details" << endl;
+    m.getMagazine();
+
+    b.displayBook();
+    m.displayMagazine();
+
+    return 0;
+}
