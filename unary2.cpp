@@ -11,11 +11,9 @@ public:
         x = a;
     }
 
-    Number operator+(Number n)
+    void operator++()
     {
-        Number temp(0);
-        temp.x = x + n.x;
-        return temp;
+        x++;
     }
 
     void display()
@@ -26,12 +24,15 @@ public:
 
 int main()
 {
-    Number n1(10);
-    Number n2(20);
+    Number n(10);
 
-    Number n3 = n1 + n2;
+    cout << "Before Increment: ";
+    n.display();
 
-    n3.display();
+    ++n;
+
+    cout << "After Increment: ";
+    n.display();
 
     return 0;
 }
